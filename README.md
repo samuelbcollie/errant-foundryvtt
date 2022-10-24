@@ -4,7 +4,7 @@
   </a>
 </p>
 <h1 align="center">
-  Old-School Essentials – Foundry VTT Edition
+  Errant – Foundry VTT Edition
 </h1>
 <p align="center">
   <!-- BEGIN TEXT REQUIRED BY LICENSE -->Requires <strong><em>Old-School Essentials</em></strong> Classic Fantasy or Advanced Fantasy.<!-- END TEXT REQUIRED BY LICENSE --> Find the game at <a href="https://necroticgnome.com">Necrotic Gnome's website</a>.

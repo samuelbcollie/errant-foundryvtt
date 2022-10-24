@@ -23,7 +23,7 @@ export class OseActor extends Actor {
     if (game.settings.get(game.system.id, "initiative") != "group") {
       data.initiative.value = data.initiative.mod;
       if (actorType === "character") {
-        data.initiative.value += data.scores.dex.init;
+        data.initiative.value += data.scores.skill.init;
       }
     } else {
       data.initiative.value = 0;
@@ -176,7 +176,7 @@ export class OseActor extends Actor {
       roll: {
         type: "above",
         target: actorData.saves[save].value,
-        magic: actorType === "character" ? actorData.scores.wis.mod : 0,
+        magic: actorType === "character" ? actorData.scores.pres.mod : 0,
       },
       details: game.i18n.format("OSE.roll.details.save", { save: label }),
     };
@@ -337,7 +337,7 @@ export class OseActor extends Actor {
     const label = game.i18n.localize(`OSE.roll.hd`);
     const rollParts = [actorData.hp.hd];
     if (actorType == "character") {
-      rollParts.push(actorData.scores.con.mod);
+      rollParts.push(actorData.scores.phys.mod);
     }
 
     const data = {
@@ -450,7 +450,7 @@ export class OseActor extends Actor {
 
     // Add Str to damage
     if (attData.roll.type == "melee") {
-      dmgParts.push(data.scores.str.mod);
+      dmgParts.push(data.scores.phys.mod);
     }
 
     // Damage roll
@@ -502,12 +502,12 @@ export class OseActor extends Actor {
     }
     if (options.type == "missile") {
       rollParts.push(
-        data.scores.dex.mod.toString(),
+        data.scores.skill.mod.toString(),
         data.thac0.mod.missile.toString()
       );
     } else if (options.type == "melee") {
       rollParts.push(
-        data.scores.str.mod.toString(),
+        data.scores.phys.mod.toString(),
         data.thac0.mod.melee.toString()
       );
     }
@@ -516,7 +516,7 @@ export class OseActor extends Actor {
     }
     let thac0 = data.thac0.value;
     if (options.type == "melee") {
-      dmgParts.push(data.scores.str.mod);
+      dmgParts.push(data.scores.phys.mod);
     }
     const rollData = {
       actor: isNewerVersion(game.version, "10.264") ? this : this.data, //v9-compatibility
@@ -746,8 +746,8 @@ export class OseActor extends Actor {
     let AcShield = 0;
     let AacShield = 0;
 
-    actorData.aac.naked = baseAac + actorData.scores.dex.mod;
-    actorData.ac.naked = baseAc - actorData.scores.dex.mod;
+    actorData.aac.naked = baseAac + actorData.scores.skill.mod;
+    actorData.ac.naked = baseAc - actorData.scores.skill.mod;
     const armors = actorItems.filter((i) => i.type == "armor");
     armors.forEach((a) => {
       const armorData = a?.system || a?.data?.data; //v9-compatibility
@@ -761,9 +761,9 @@ export class OseActor extends Actor {
       baseAac = armorData.aac.value;
     });
     actorData.aac.value =
-      baseAac + actorData.scores.dex.mod + AacShield + actorData.aac.mod;
+      baseAac + actorData.scores.skill.mod + AacShield + actorData.aac.mod;
     actorData.ac.value =
-      baseAc - actorData.scores.dex.mod - AcShield - actorData.ac.mod;
+      baseAc - actorData.scores.skill.mod - AcShield - actorData.ac.mod;
     actorData.ac.shield = AcShield;
     actorData.aac.shield = AacShield;
   }
@@ -786,29 +786,21 @@ export class OseActor extends Actor {
       16: 2,
       18: 3,
     };
-    actorData.scores.str.mod = OseActor._valueFromTable(
+    actorData.scores.phys.mod = OseActor._valueFromTable(
       standard,
-      actorData.scores.str.value
+      actorData.scores.phys.value
     );
-    actorData.scores.int.mod = OseActor._valueFromTable(
+    actorData.scores.mind.mod = OseActor._valueFromTable(
       standard,
-      actorData.scores.int.value
+      actorData.scores.mind.value
     );
-    actorData.scores.dex.mod = OseActor._valueFromTable(
+    actorData.scores.skill.mod = OseActor._valueFromTable(
       standard,
-      actorData.scores.dex.value
+      actorData.scores.skill.value
     );
-    actorData.scores.cha.mod = OseActor._valueFromTable(
+    actorData.scores.pres.mod = OseActor._valueFromTable(
       standard,
-      actorData.scores.cha.value
-    );
-    actorData.scores.wis.mod = OseActor._valueFromTable(
-      standard,
-      actorData.scores.wis.value
-    );
-    actorData.scores.con.mod = OseActor._valueFromTable(
-      standard,
-      actorData.scores.con.value
+      actorData.scores.pres.value
     );
 
     const capped = {
@@ -821,16 +813,16 @@ export class OseActor extends Actor {
       16: 1,
       18: 2,
     };
-    actorData.scores.dex.init = OseActor._valueFromTable(
+    actorData.scores.skill.init = OseActor._valueFromTable(
       capped,
-      actorData.scores.dex.value
+      actorData.scores.skill.value
     );
-    actorData.scores.cha.npc = OseActor._valueFromTable(
+    actorData.scores.pres.npc = OseActor._valueFromTable(
       capped,
-      actorData.scores.cha.value
+      actorData.scores.pres.value
     );
-    actorData.scores.cha.retain = actorData.scores.cha.mod + 4;
-    actorData.scores.cha.loyalty = actorData.scores.cha.mod + 7;
+    actorData.scores.pres.retain = actorData.scores.pres.mod + 4;
+    actorData.scores.pres.loyalty = actorData.scores.pres.mod + 7;
 
     const od = {
       0: 0,
@@ -842,7 +834,7 @@ export class OseActor extends Actor {
     };
     actorData.exploration.odMod = OseActor._valueFromTable(
       od,
-      actorData.scores.str.value
+      actorData.scores.phys.value
     );
 
     const literacy = {
@@ -853,7 +845,7 @@ export class OseActor extends Actor {
     };
     actorData.languages.literacy = OseActor._valueFromTable(
       literacy,
-      actorData.scores.int.value
+      actorData.scores.mind.value
     );
 
     const spoken = {
@@ -865,7 +857,7 @@ export class OseActor extends Actor {
     };
     actorData.languages.spoken = OseActor._valueFromTable(
       spoken,
-      actorData.scores.int.value
+      actorData.scores.mind.value
     );
   }
 }

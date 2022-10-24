@@ -1,9 +1,9 @@
 {
-  "name": "ose-dev",
-  "id": "ose-dev",
-  "title": "Old-School Essentials Development Build",
-  "description": "Play B/X OSR modules with Old-School Essentials on Foundry VTT",
-  "version": "AUTOMATICALLY REPLACED BY GITHUB WORKFLOW ACTION",
+  "name": "errant-dev",
+  "id": "errant-dev",
+  "title": "Errant Development Build",
+  "description": "Play Errant on Foundry VTT (forked from ose)",
+  "version": "0.0.1",
   "minimumCoreVersion": "10",
   "compatibleCoreVersion": "10",
   "compatibility": {
@@ -11,7 +11,7 @@
     "verified": "10",
     "maximum": 10
   },
-  "author": "Maintained by VTT Red with 9 contributors",
+  "author": "Sam and VTT Red with 9 contributors",
   "authors": [
     {
       "name": "VTT RED",
@@ -20,6 +20,9 @@
     },
     {
       "name": "and 9 other contributors"
+    },
+    {
+      "name": "Sam"
     }
   ],
   "esmodules": [
@@ -34,31 +37,6 @@
       "lang": "en",
       "name": "English (UK)",
       "path": "dist/lang/en.json"
-    },
-    {
-      "lang": "it",
-      "name": "Italiano (Italia)",
-      "path": "dist/lang/it.json"
-    },
-    {
-      "lang": "fr",
-      "name": "Français (France)",
-      "path": "dist/lang/fr.json"
-    },
-    {
-      "lang": "pt-BR",
-      "name": "Português (Brasil)",
-      "path": "dist/lang/pt-BR.json"
-    },
-    {
-      "lang": "es",
-      "name": "Español (España)",
-      "path": "dist/lang/es.json"
-    },
-    {
-      "lang": "de",
-      "name": "Deutsch (Deutschland)",
-      "path": "dist/lang/de.json"
     }
   ],
   "gridDistance": 5,
@@ -66,7 +44,7 @@
   "url": "AUTOMATICALLY REPLACED BY GITHUB WORKFLOW ACTION",
   "manifest": "AUTOMATICALLY REPLACED BY GITHUB WORKFLOW ACTION",
   "download": "AUTOMATICALLY REPLACED BY GITHUB WORKFLOW ACTION",
-  "bugs": "https://github.com/vttred/ose/issues",
+  "bugs": "https://github.com/samuelbcollie/errant-foundryvtt/issues",
   "flags": {
     "allowBugReporter": true
   }

@@ -104,27 +104,19 @@
         "ft": 1
       },
       "scores": {
-        "str": {
+        "phys": {
           "value": 0,
           "bonus": 0
         },
-        "int": {
+        "mind": {
           "value": 0,
           "bonus": 0
         },
-        "wis": {
+        "pres": {
           "value": 0,
           "bonus": 0
         },
-        "dex": {
-          "value": 0,
-          "bonus": 0
-        },
-        "con": {
-          "value": 0,
-          "bonus": 0
-        },
-        "cha": {
+        "skill": {
           "value": 0,
           "bonus": 0
         }

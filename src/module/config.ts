@@ -24,7 +24,7 @@ export type OseConfig = {
   monster_thac0: Record<number, number>;
 };
 
-export type Attribute = "str" | "int" | "dex" | "wis" | "con" | "cha";
+export type Attribute = "phys" | "skill" | "mind" | "pres";
 export type ExplorationSkill = "ld" | "od" | "sd" | "fs";
 export type RollType = "result" | "above" | "below";
 export type Save = "death" | "wand" | "paralysis" | "breath" | "spell";
@@ -59,20 +59,16 @@ export const OSE: OseConfig = {
     return `${this.systemRoot}/assets`
   },
   scores: {
-    str: "OSE.scores.str.long",
-    int: "OSE.scores.int.long",
-    dex: "OSE.scores.dex.long",
-    wis: "OSE.scores.wis.long",
-    con: "OSE.scores.con.long",
-    cha: "OSE.scores.cha.long",
+    phys: "OSE.scores.phys.long",
+    skill: "OSE.scores.skill.long",
+    mind: "OSE.scores.mind.long",
+    pres: "OSE.scores.pres.long"
   },
   scores_short: {
-    str: "OSE.scores.str.short",
-    int: "OSE.scores.int.short",
-    dex: "OSE.scores.dex.short",
-    wis: "OSE.scores.wis.short",
-    con: "OSE.scores.con.short",
-    cha: "OSE.scores.cha.short",
+    phys: "OSE.scores.phys.short",
+    skill: "OSE.scores.skill.short",
+    mind: "OSE.scores.mind.short",
+    pres: "OSE.scores.pres.short"
   },
   exploration_skills: {
     ld: "OSE.exploration.ld.long",

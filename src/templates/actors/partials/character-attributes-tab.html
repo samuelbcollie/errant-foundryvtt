@@ -2,57 +2,39 @@
     {{!-- Scores --}}
     <div class="attribute-group">
         <ul class="attributes">
-            <li class="attribute ability-score" data-score="str">
-                <h4 class="attribute-name box-title" title="{{ localize 'OSE.scores.str.long' }}">
-                    <a>{{ localize "OSE.scores.str.short" }}</a>
+            <li class="attribute ability-score" data-score="phys">
+                <h4 class="attribute-name box-title" title="{{ localize 'OSE.scores.phys.long' }}">
+                    <a>{{ localize "OSE.scores.phys.short" }}</a>
                 </h4>
                 <div class="attribute-value">
-                    <input name="system.scores.str.value" type="text" value="{{system.scores.str.value}}" placeholder="0"
+                    <input name="system.scores.phys.value" type="text" value="{{system.scores.phys.value}}" placeholder="0"
                         data-dtype="Number" />
                 </div>
             </li>
-            <li class="attribute ability-score" data-score="int">
-                <h4 class="attribute-name box-title" title="{{ localize 'OSE.scores.int.long' }}">
-                    <a>{{ localize "OSE.scores.int.short" }}</a>
+            <li class="attribute ability-score" data-score="mind">
+                <h4 class="attribute-name box-title" title="{{ localize 'OSE.scores.mind.long' }}">
+                    <a>{{ localize "OSE.scores.mind.short" }}</a>
                 </h4>
                 <div class="attribute-value">
-                    <input name="system.scores.int.value" type="text" value="{{system.scores.int.value}}" placeholder="0"
+                    <input name="system.scores.mind.value" type="text" value="{{system.scores.mind.value}}" placeholder="0"
                         data-dtype="Number" />
                 </div>
             </li>
-            <li class="attribute ability-score" data-score="wis">
-                <h4 class="attribute-name box-title" title="{{ localize 'OSE.scores.wis.long' }}">
-                    <a>{{ localize "OSE.scores.wis.short" }}</a>
+            <li class="attribute ability-score" data-score="pres">
+                <h4 class="attribute-name box-title" title="{{ localize 'OSE.scores.pres.long' }}">
+                    <a>{{ localize "OSE.scores.pres.short" }}</a>
                 </h4>
                 <div class="attribute-value">
-                    <input name="system.scores.wis.value" type="text" value="{{system.scores.wis.value}}" placeholder="0"
+                    <input name="system.scores.pres.value" type="text" value="{{system.scores.pres.value}}" placeholder="0"
                         data-dtype="Number" />
                 </div>
             </li>
-            <li class="attribute ability-score" data-score="dex">
-                <h4 class="attribute-name box-title" title="{{ localize 'OSE.scores.dex.long' }}">
-                    <a>{{ localize "OSE.scores.dex.short" }}</a>
+            <li class="attribute ability-score" data-score="skill">
+                <h4 class="attribute-name box-title" title="{{ localize 'OSE.scores.skill.long' }}">
+                    <a>{{ localize "OSE.scores.skill.short" }}</a>
                 </h4>
                 <div class="attribute-value">
-                    <input name="system.scores.dex.value" type="text" value="{{system.scores.dex.value}}" placeholder="0"
-                        data-dtype="Number" />
-                </div>
-            </li>
-            <li class="attribute ability-score" data-score="con">
-                <h4 class="attribute-name box-title" title="{{ localize 'OSE.scores.con.long' }}">
-                    <a>{{ localize "OSE.scores.con.short" }}</a>
-                </h4>
-                <div class="attribute-value">
-                    <input name="system.scores.con.value" type="text" value="{{system.scores.con.value}}" placeholder="0"
-                        data-dtype="Number" />
-                </div>
-            </li>
-            <li class="attribute ability-score" data-score="cha">
-                <h4 class="attribute-name box-title" title="{{ localize 'OSE.scores.cha.long' }}">
-                    <a>{{ localize "OSE.scores.cha.short" }}</a>
-                </h4>
-                <div class="attribute-value">
-                    <input name="system.scores.cha.value" type="text" value="{{system.scores.cha.value}}" placeholder="0"
+                    <input name="system.scores.skill.value" type="text" value="{{system.scores.skill.value}}" placeholder="0"
                         data-dtype="Number" />
                 </div>
             </li>
@@ -114,8 +96,8 @@
                     <h4 class="attribute-name box-title" title="{{ localize 'OSE.Initiative' }}">
                         {{ localize "OSE.InitiativeShort" }}</h4>
                     <div class="attribute-value"
-                        title="{{localize 'OSE.scores.dex.long'}}({{system.scores.dex.init}}) + {{localize 'OSE.Modifier'}}({{system.initiative.mod}})">
-                        {{add system.scores.dex.init system.initiative.mod}}
+                        title="{{localize 'OSE.scores.skill.long'}}({{system.scores.skill.init}}) + {{localize 'OSE.Modifier'}}({{system.initiative.mod}})">
+                        {{add system.scores.skill.init system.initiative.mod}}
                     </div>
                 </li>
                 {{/if}}
@@ -129,8 +111,8 @@
                     </h4>
                     <div class="flexrow">
                         <div class="attribute-value"
-                            title="{{localize 'OSE.scores.str.long'}}({{system.scores.str.mod}}) + {{localize 'OSE.Modifier'}}({{system.thac0.mod.melee}})">
-                            {{add system.scores.str.mod system.thac0.mod.melee}}
+                            title="{{localize 'OSE.scores.phys.long'}}({{system.scores.phys.mod}}) + {{localize 'OSE.Modifier'}}({{system.thac0.mod.melee}})">
+                            {{add system.scores.phys.mod system.thac0.mod.melee}}
                         </div>
                     </div>
                 </li>
@@ -163,8 +145,8 @@
                     </h4>
                     <div class="flexrow">
                         <div class="attribute-value"
-                            title="{{localize 'OSE.scores.dex.long'}}({{system.scores.dex.mod}}) + {{localize 'OSE.Modifier'}}({{system.thac0.mod.missile}})">
-                            {{add system.scores.dex.mod system.thac0.mod.missile}}
+                            title="{{localize 'OSE.scores.skill.long'}}({{system.scores.skill.mod}}) + {{localize 'OSE.Modifier'}}({{system.thac0.mod.missile}})">
+                            {{add system.scores.skill.mod system.thac0.mod.missile}}
                         </div>
                     </div>
                 </li>
@@ -247,8 +229,8 @@
             <li class="attribute saving-throw">
                 <h4 class="attribute-name box-title" title="{{ localize 'OSE.saves.magic.long' }}">
                     {{ localize "OSE.saves.magic.long"}}</h4>
-                <div class="attribute-value flat" title="{{localize 'OSE.scores.wis.long'}}({{system.scores.wis.mod}})">
-                    {{mod system.scores.wis.mod}}
+                <div class="attribute-value flat" title="{{localize 'OSE.scores.pres.long'}}({{system.scores.pres.mod}})">
+                    {{mod system.scores.pres.mod}}
                 </div>
             </li>
         </ul>

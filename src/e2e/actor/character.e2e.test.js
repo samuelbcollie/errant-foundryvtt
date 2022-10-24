@@ -84,28 +84,20 @@ export default ({before, beforeEach, after, describe, it, expect, ...context}) =
         await trashActor();
       })
 
-      describe('Strength', () => {
-        describe('Can roll', () => canRollCheck('str'))
+      describe('Physical', () => {
+        describe('Can roll', () => canRollCheck('phys'))
       })
 
-      describe('Intelligence', () => {
-        describe('Can roll', () => canRollCheck('int'))
+      describe('Mind', () => {
+        describe('Can roll', () => canRollCheck('mind'))
       })
 
-      describe('Wisdom', () => {
-        describe('Can roll', () => canRollCheck('wis'))
+      describe('Skill', () => {
+        describe('Can roll', () => canRollCheck('skill'))
       })
 
-      describe('Dexterity', () => {
-        describe('Can roll', () => canRollCheck('dex'))
-      })
-
-      describe('Constitution', () => {
-        describe('Can roll', () => canRollCheck('con'))
-      })
-
-      describe('Charisma', () => {
-        describe('Can roll', () => canRollCheck('cha'))
+      describe('Presence', () => {
+        describe('Can roll', () => canRollCheck('pres'))
       })
     })
 

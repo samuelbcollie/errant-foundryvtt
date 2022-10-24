@@ -59,11 +59,11 @@
             {{/unless}} {{#if (eq e.data.type 'character')}}
             <div class="field-short" title="{{localize 'OSE.Melee'}}">
               <i class="fas fa-fist-raised"></i>
-              {{add e.data.data.scores.str.mod e.data.data.thac0.mod.melee}}
+              {{add e.data.data.scores.phys.mod e.data.data.thac0.mod.melee}}
             </div>
             <div class="field-short" title="{{localize 'OSE.Missile'}}">
               <i class="fas fa-bullseye"></i>
-              {{add e.data.data.scores.dex.mod e.data.data.thac0.mod.missile}}
+              {{add e.data.data.scores.skill.mod e.data.data.thac0.mod.missile}}
             </div>
             {{/if}}
             <div class="field-short flex2">
@@ -84,7 +84,7 @@
               <span title="{{lookup @root.config.saves_long i}}">{{lookup @root.config.saves_short i}}
                 {{s.value}}</span>
               {{/each}} {{#if (eq e.data.type 'character')}}<span><i class="fas fa-magic"
-                  title="{{localize 'OSE.saves.magic.long'}}"></i>{{mod e.data.data.scores.wis.mod}}</span>{{/if}}
+                  title="{{localize 'OSE.saves.magic.long'}}"></i>{{mod e.data.data.scores.pres.mod}}</span>{{/if}}
             </div>
           </div>
         </div>

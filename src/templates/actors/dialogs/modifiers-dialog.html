@@ -1,9 +1,9 @@
 <form autocomplete="off">
   <div class="attribute-bonuses">
-    <label>{{localize 'OSE.scores.str.long'}}</label>
+    <label>{{localize 'OSE.scores.phys.long'}}</label>
     <ol>
       <li>
-        {{localize 'OSE.Melee'}} ({{mod data.scores.str.mod}})
+        {{localize 'OSE.Melee'}} ({{mod data.scores.phys.mod}})
       </li>
       <li>
         {{localize 'OSE.exploration.od.long'}} ({{data.exploration.odMod}} in 6)
@@ -11,7 +11,7 @@
     </ol>
   </div>
   <div class="attribute-bonuses">
-    <label>{{localize 'OSE.scores.int.long'}}</label>
+    <label>{{localize 'OSE.scores.mind.long'}}</label>
     <ol>
       <li>
         {{localize 'OSE.SpokenLanguages'}} ({{localize data.languages.spoken}})
@@ -22,46 +22,32 @@
     </ol>
   </div>
   <div class="attribute-bonuses">
-    <label>{{localize 'OSE.scores.wis.long'}}</label>
+    <label>{{localize 'OSE.scores.pres.long'}}</label>
     <ol>
       <li>
-        {{localize 'OSE.saves.magic.long'}} ({{mod data.scores.wis.mod}})
+        {{localize 'OSE.NPCReaction'}} ({{mod data.scores.pres.npc}})
+      </li>
+      <li>
+        {{localize 'OSE.RetainersMax'}} ({{add data.scores.pres.mod 4}})
+      </li>
+      <li>
+        {{localize 'OSE.Loyalty'}} ({{add data.scores.pres.mod 7}})
       </li>
     </ol>
   </div>
   <div class="attribute-bonuses">
-    <label>{{localize 'OSE.scores.dex.long'}}</label>
+    <label>{{localize 'OSE.scores.skill.long'}}</label>
     <ol>
       <li>
-        {{localize 'OSE.Missile'}} ({{mod data.scores.dex.mod}})
-      </li>
-      <li>
-        {{localize 'OSE.Initiative'}} ({{mod data.scores.dex.init}})
-      </li>
-      <li>
-        {{localize 'OSE.ArmorClass'}} ({{mod data.scores.dex.mod}})
+        {{localize 'OSE.Initiative'}} ({{mod data.scores.skill.init}})
       </li>
     </ol>
   </div>
   <div class="attribute-bonuses">
-    <label>{{localize 'OSE.scores.con.long'}}</label>
+    <label>{{localize 'OSE.scores.phys.long'}}</label>
     <ol>
       <li>
-        {{localize 'OSE.Health'}} ({{mod data.scores.con.mod}})
-      </li>
-    </ol>
-  </div>
-  <div class="attribute-bonuses">
-    <label>{{localize 'OSE.scores.cha.long'}}</label>
-    <ol>
-      <li>
-        {{localize 'OSE.NPCReaction'}} ({{mod data.scores.cha.npc}})
-      </li>
-      <li>
-        {{localize 'OSE.RetainersMax'}} ({{add data.scores.cha.mod 4}})
-      </li>
-      <li>
-        {{localize 'OSE.Loyalty'}} ({{add data.scores.cha.mod 7}})
+        {{localize 'OSE.Health'}} ({{mod data.scores.phys.mod}})
       </li>
     </ol>
   </div>
